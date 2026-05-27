@@ -164,79 +164,77 @@
 
     <script>
         // --- WEDDING GUEST DATA ---
-        // Replace these placeholder names and tables with your actual guest list.
-        // Make sure to format them exactly like this: { name: "Name", table: "Table X" }
         const guestList = [
-    { name: "Hassan Hafiz", table: "Table 1" },
-    { name: "Zunera Amjad", table: "Table 1" },
-    { name: "Nayeer Afzal", table: "Table 2" },
-    { name: "Muhammed Hafiz", table: "Table 2" },
-    { name: "Amaan", table: "Table 2" },
-    { name: "Shehzana", table: "Table 2" },
-    { name: "Aleena", table: "Table 2" },
-    { name: "Nasreen Raja", table: "Table 3" },
-    { name: "Banaras Raja", table: "Table 3" },
-    { name: "Sohail", table: "Table 3" },
-    { name: "Yasmin", table: "Table 3" },
-    { name: "Lana", table: "Table 3" },
-    { name: "Roee", table: "Table 3" },
-    { name: "Nazish", table: "Table 3" },
-    { name: "Hammad", table: "Table 3" },
-    { name: "Safaa", table: "Table 3" },
-    { name: "Hania", table: "Table 3" },
-    { name: "Saima", table: "Table 3" },
-    { name: "Faisal", table: "Table 3" },
-    { name: "Hashim", table: "Table 3" },
-    { name: "Talha", table: "Table 3" },
-    { name: "Yaqoob", table: "Table 3" },
-    { name: "Rukhsana Wahid", table: "Table 4" },
-    { name: "Uzma", table: "Table 4" },
-    { name: "Rizwan", table: "Table 4" },
-    { name: "Idrees", table: "Table 4" },
-    { name: "Aadam", table: "Table 4" },
-    { name: "Anisa", table: "Table 4" },
-    { name: "Sajid", table: "Table 4" },
-    { name: "Yaqoob", table: "Table 4" },
-    { name: "Ayra", table: "Table 4" },
-    { name: "Nosheen", table: "Table 4" },
-    { name: "Waseem", table: "Table 4" },
-    { name: "Amelia", table: "Table 4" },
-    { name: "Anaya", table: "Table 4" },
-    { name: "Hamzah", table: "Table 4" },
-    { name: "Rumena", table: "Table 4" }
-];
+            { name: "Hassan Hafiz", table: "Table 1" },
+            { name: "Zunera Amjad", table: "Table 1" },
+            { name: "Nayeer Afzal", table: "Table 2" },
+            { name: "Muhammed Hafiz", table: "Table 2" },
+            { name: "Amaan", table: "Table 2" },
+            { name: "Shehzana", table: "Table 2" },
+            { name: "Aleena", table: "Table 2" },
+            { name: "Nasreen Raja", table: "Table 3" },
+            { name: "Banaras Raja", table: "Table 3" },
+            { name: "Sohail", table: "Table 3" },
+            { name: "Yasmin", table: "Table 3" },
+            { name: "Lana", table: "Table 3" },
+            { name: "Roee", table: "Table 3" },
+            { name: "Nazish", table: "Table 3" },
+            { name: "Hammad", table: "Table 3" },
+            { name: "Safaa", table: "Table 3" },
+            { name: "Hania", table: "Table 3" },
+            { name: "Saima", table: "Table 3" },
+            { name: "Faisal", table: "Table 3" },
+            { name: "Hashim", table: "Table 3" },
+            { name: "Talha", table: "Table 3" },
+            { name: "Yaqoob", table: "Table 3" },
+            { name: "Rukhsana Wahid", table: "Table 4" },
+            { name: "Uzma", table: "Table 4" },
+            { name: "Rizwan", table: "Table 4" },
+            { name: "Idrees", table: "Table 4" },
+            { name: "Aadam", table: "Table 4" },
+            { name: "Anisa", table: "Table 4" },
+            { name: "Sajid", table: "Table 4" },
+            { name: "Yaqoob", table: "Table 4" },
+            { name: "Ayra", table: "Table 4" },
+            { name: "Nosheen", table: "Table 4" },
+            { name: "Waseem", table: "Table 4" },
+            { name: "Amelia", table: "Table 4" },
+            { name: "Anaya", table: "Table 4" },
+            { name: "Hamzah", table: "Table 4" },
+            { name: "Rumena", table: "Table 4" }
+        ];
 
-const searchInput = document.getElementById('searchInput');
-const resultsContainer = document.getElementById('resultsContainer');
+        const searchInput = document.getElementById('searchInput');
+        const resultsContainer = document.getElementById('resultsContainer');
 
-searchInput.addEventListener('input', function() {
-    const query = this.value.trim().toLowerCase();
-    
-    if (query === "") {
-        resultsContainer.innerHTML = '<p class="instruction">Enter your first or last name to view your table assignment.</p>';
-        return;
-    }
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            
+            if (query === "") {
+                resultsContainer.innerHTML = '<p class="instruction">Enter your first or last name to view your table assignment.</p>';
+                return;
+            }
 
-    const filteredGuests = guestList.filter(guest => 
-        guest.name.toLowerCase().includes(query)
-    );
+            const filteredGuests = guestList.filter(guest => 
+                guest.name.toLowerCase().includes(query)
+            );
 
-    if (filteredGuests.length > 0) {
-        resultsContainer.innerHTML = "";
-        
-        filteredGuests.forEach(guest => {
-            const card = document.createElement('div');
-            card.className = 'result-card';
-            card.innerHTML = `
-                <div class="guest-name">${guest.name}</div>
-                <div class="table-assignment">${guest.table}</div>
-            `;
-            resultsContainer.appendChild(card);
+            if (filteredGuests.length > 0) {
+                resultsContainer.innerHTML = "";
+                
+                filteredGuests.forEach(guest => {
+                    const card = document.createElement('div');
+                    card.className = 'result-card';
+                    card.innerHTML = `
+                        <div class="guest-name">${guest.name}</div>
+                        <div class="table-assignment">${guest.table}</div>
+                    `;
+                    resultsContainer.appendChild(card);
+                });
+            } else {
+                resultsContainer.innerHTML = '<p class="no-results">No seat found. Please try checking the spelling or typing your last name.</p>';
+            }
         });
-    } else {
-        resultsContainer.innerHTML = '<p class="no-results">No seat found. Please try checking the spelling or typing your last name.</p>';
-    }
-});
-</script>
+    </script>
 </body>
 </html>
