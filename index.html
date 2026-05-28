@@ -30,17 +30,17 @@
             line-height: 1.6;
             padding: 40px 20px;
             display: flex;
-            flex-direction: column; /* Allows logo to stack above the box */
+            flex-direction: column; /* Stacks logo cleanly above the box */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        /* Sizing and spacing for your logo outside the box */
+        /* Set logo to exactly 1.5 inches high while auto-scaling the correct width */
         .wedding-logo {
-            max-width: 120px;
-            height: auto;
-            margin-bottom: 25px; /* Creates elegant spacing above the white card */
+            height: 1.5in;
+            width: auto;
+            margin: 0 auto 25px auto; /* Centers the logo and adds space below it */
             display: block;
         }
 
@@ -154,7 +154,8 @@
 </head>
 <body>
 
-<img src="Final Logo H&Z-03.png" class="wedding-logo" alt="Wedding Logo">
+    <!-- Logo is placed cleanly outside and above the container -->
+    <img src="Final Logo H&Z-03.png" class="wedding-logo" alt="Wedding Logo">
 
     <div class="container">
         <div class="header">
