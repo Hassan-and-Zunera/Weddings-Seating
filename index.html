@@ -28,7 +28,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 40px 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column; /* Stacks logo cleanly above the box */
             justify-content: center;
@@ -36,14 +36,15 @@
             min-height: 100vh;
         }
 
-        /* Set logo to exactly 1.5 inches high while auto-scaling the correct width */
+        /* Fixed: Set to 2.5 inches and minimized bottom space to fix the gap */
         .wedding-logo {
-            height: 2.5 in;
+            height: 2.5in;
             width: auto;
-            margin: 0 auto 25px auto; /* Centers the logo and adds space below it */
+            margin: 0 auto 5px auto;
             display: block;
         }
 
+        /* Fixed: Adjusted margin-top to cleanly pull the container up closer to the logo */
         .container {
             width: 100%;
             max-width: 450px;
@@ -53,6 +54,7 @@
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             border: 1px solid rgba(184, 156, 114, 0.2);
+            margin-top: -10px;
         }
 
         .header h1 {
@@ -219,6 +221,7 @@
         const searchInput = document.getElementById('searchInput');
         const resultsContainer = document.getElementById('resultsContainer');
 
+        // Fixed: Ensured period separator is used for the method call
         searchInput.addEventListener('input', function() {
             const query = this.value.trim().toLowerCase();
             
