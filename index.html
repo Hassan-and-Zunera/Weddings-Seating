@@ -28,11 +28,20 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 20px;
+            padding: 40px 20px;
             display: flex;
+            flex-direction: column; /* Allows logo to stack above the box */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+        }
+
+        /* Sizing and spacing for your logo outside the box */
+        .wedding-logo {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 25px; /* Creates elegant spacing above the white card */
+            display: block;
         }
 
         .container {
@@ -144,6 +153,8 @@
     </style>
 </head>
 <body>
+
+    <img src="3.png" class="wedding-logo" alt="Wedding Logo">
 
     <div class="container">
         <div class="header">
